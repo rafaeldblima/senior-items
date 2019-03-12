@@ -1,6 +1,0 @@
-172.20.0.1 - - [11/Mar/2019:20:33:41 +0000] "GET / HTTP/1.1" 200 357 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
-172.20.0.1 - - [11/Mar/2019:20:33:41 +0000] "GET /styles.3bb2a9d4949b7dc120a9.css HTTP/1.1" 200 0 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
-172.20.0.1 - - [11/Mar/2019:20:33:41 +0000] "GET /runtime.ec2944dd8b20ec099bf3.js HTTP/1.1" 200 736 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
-172.20.0.1 - - [11/Mar/2019:20:33:41 +0000] "GET /polyfills.7037a817a5bb670ed2ca.js HTTP/1.1" 200 15957 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
-172.20.0.1 - - [11/Mar/2019:20:33:41 +0000] "GET /main.3cd881248164cd8e840a.js HTTP/1.1" 200 84931 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
-172.20.0.1 - - [11/Mar/2019:20:33:42 +0000] "GET /favicon.ico HTTP/1.1" 200 5430 "http://localhost:5000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"

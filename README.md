@@ -1,27 +1,89 @@
-# SeniorItems
+<p align="center">
+  <a href="https://angular.io/">
+    <img src="https://www.angularexampleapp.com/assets/images/angular.svg" alt="Logo" width=72 height=72>
+  </a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+  <h3 align="center">CRUD app with Angular 7 and PrimeNG 7</h3>
 
-## Development server
+  <p align="center">
+    This example app shows how to build a basic CRUD app with Angular 7.0, PrimeNG and localstorage.
+  </p>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Author
 
-## Code scaffolding
+* **Rafael Lima**  - [Linkedin](https://www.linkedin.com/in/rafaeldblima/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Quick start
 
-## Build
+**Warning**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Clone the project
+ ```bash
+ git clone https://github.com/rafaeldblima/senior-items.git
+ ```
 
-## Running unit tests
+2. Go inside project folder:
+ ```bash
+ cd senior-items
+ ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Now we have two ways:
+   1. Development
+      1. Install project dependencies
+  
+       ```bash
+       npm install
+       ```
+  
+      2. Launch development server
+  
+       ```bash
+       npm server
+       ```
+  
+      3. Open browser
+  
+       ```bash
+       http://localhost:4200/
+       ```
+   2. Docker-compose
+   
+      **Warning**
+      
+      > Must have docker and docker-compose installed
+      1. Go inside infra folder
+  
+       ```bash
+       cd infra
+       ```
+  
+      2. Launch docker
+   
+      **Warning**
+      
+      > build can take a while
+  
+       ```bash
+       docker-compose up -d
+       ```
+  
+      3. Open browser
+   
+      **Warning**
+      
+      > port 80 must be free to be used
+  
+       ```bash
+       http://localhost:80/
+       ```
 
-## Running end-to-end tests
+## What's included
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Angular 7
+* HTML 5;
+* CSS;
+* TypeScript;
+* Rotas;
+* LocalStorage;
+* PrimeNG.

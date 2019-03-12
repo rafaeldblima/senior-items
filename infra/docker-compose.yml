@@ -8,7 +8,7 @@ services:
       dockerfile:
         Dockerfile
     ports:
-      - "4200:80"
+      - "80:80"
     volumes:
       - ./data/server/logs:/usr/src/app/logs
       - ./data/server/logs/nginx:/var/log/nginx/
