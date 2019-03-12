@@ -16,8 +16,6 @@
 
 ## Quick start
 
-**Warning**
-
 1. Clone the project
  ```bash
  git clone https://github.com/rafaeldblima/senior-items.git
