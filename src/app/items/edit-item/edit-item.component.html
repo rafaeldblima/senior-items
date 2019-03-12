@@ -1,0 +1,96 @@
+<div class="container">
+  <p-toast [style]="toastStyle"></p-toast>
+  <form autocomplete="off" [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+        <h1>Cadastro de Item</h1>
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <div class="ui-g-12 ui-fluid">
+        <p class="little-warning">
+          Os campos com o simbolo asterisco (<span class="mandatory">*</span>) são de preenchimento obrigatório
+        </p>
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <div class="ui-g-12 ui-lg-9 ui-md-12 ui-sm-12 ui-fluid">
+        <label for="name">Nome <span class="mandatory">*</span>:</label>
+        <input id="name" type="text" pInputText formControlName="name" maxlength="50"
+               pattern="[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]*"/>
+
+        <p-message severity="error"
+                   [text]="getFormControl('name').errors['required'] ? 'Nome é obrigatório' : getFormControl('name').errors['pattern'] ? 'Só é permitido letras para esse campo' : ''"
+                   *ngIf="showControlError('name')"></p-message>
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <div class="ui-g-12 ui-lg-3 ui-md-6 ui-sm-12 ui-fluid">
+        <label>Unidade de medida <span class="mandatory">*</span>:</label>
+        <p-dropdown [options]="units" formControlName="unit"></p-dropdown>
+        <p-message severity="error" text="Unidade de medida é obrigatória"
+                   *ngIf="showControlError('unit')"></p-message>
+      </div>
+
+      <div class="ui-g-12 ui-lg-3 ui-md-6 ui-sm-12 ui-fluid">
+        <label for="quantity">Quantidade:</label>
+        <div class="ui-inputgroup">
+          <input pInputText type="number" formControlName="quantity" id="quantity"/>
+          <span
+            class="ui-inputgroup-addon">{{getFormControl('unit').value ? getFormControl('unit').value.value.toLowerCase() : ''}}</span>
+        </div>
+      </div>
+
+      <div class="ui-g-12 ui-lg-3 ui-md-12 ui-sm-12 ui-fluid">
+        <label>Perecível <span class="mandatory">*</span>:</label>
+        <div class="ui-g display-inline">
+          <p-radioButton name="perishable" [value]="true" (onClick)="changePerishable()" label="Sim"
+                         formControlName="perishable"></p-radioButton>
+          <p-radioButton name="perishable" [value]="false" label="Não" (onClick)="changePerishable()"
+                         formControlName="perishable"></p-radioButton>
+        </div>
+        <p-message severity="error" text="A seleção do campo Perecível é obrigatória"
+                   *ngIf="showControlError('perishable')"></p-message>
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <div class="ui-g-12 ui-lg-3 ui-md-6 ui-sm-12 ui-fluid">
+        <label for="price">Preço <span class="mandatory">*</span>:</label>
+        <input pInputText currencyMask formControlName="price" id="price"
+               [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
+        <p-message severity="error" text="Preço é obrigatório"
+                   *ngIf="showControlError('price')"></p-message>
+      </div>
+
+      <div class="ui-g-12 ui-lg-3 ui-md-6 ui-sm-12 ui-fluid">
+        <label>Data de fabricação <span class="mandatory">*</span>:</label>
+        <p-calendar formControlName="fabricationDate" dateFormat="dd/mm/yy" [readonlyInput]="false"
+                    (keydown)="$event.preventDefault()"></p-calendar>
+        <p-message severity="error" text="Data de fabricação é obrigatória"
+                   *ngIf="showControlError('fabricationDate')"></p-message>
+      </div>
+
+      <div class="ui-g-12 ui-lg-3 ui-md-6 ui-sm-12 ui-fluid">
+        <label>Data de validade{{getFormControl('perishable').value ? ' *:' : ':' }}</label>
+        <p-calendar formControlName="dueDate" dateFormat="dd/mm/yy" [readonlyInput]="false"
+                    (keydown)="$event.preventDefault()"></p-calendar>
+        <p-message severity="warn" text="O item encontra-se vencido"
+                   *ngIf="isExpired(getFormControl('dueDate').value)"></p-message>
+        <p-message severity="error" text="Data de validade é obrigatória quando o produto é perecível"
+                   *ngIf="showControlError('dueDate')"></p-message>
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <button pButton type="submit" [disabled]="itemForm.invalid" label="Salvar"
+                class="ui-button-info"></button>
+        <button pButton type="button" routerLink="/itens" label="Cancelar" class="ui-button-secondary"></button>
+      </div>
+    </div>
+  </form>
+</div>

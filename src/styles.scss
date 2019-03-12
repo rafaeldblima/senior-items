@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #404C51;
+  margin: 0;
+  height: 100vh;
+
+  .menu, .ui-menu {
+    height: 92vh;
+    border: 0;
+  }
+
+  .ui-menu .ui-submenu-header {
+    font-weight: 600 !important;
+  }
+
+  .mandatory {
+    color: red;
+  }
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold
+}
+
+.display-block {
+  display: block
+}
+
+.display-inline {
+  display: inline
+}

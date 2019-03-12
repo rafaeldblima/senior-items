@@ -1,0 +1,17 @@
+version: "3"
+services:
+  front:
+    image: rafaeldbl/senior-items
+    build:
+      context:
+        ./../
+      dockerfile:
+        Dockerfile
+    ports:
+      - "4200:80"
+    volumes:
+      - ./data/server/logs:/usr/src/app/logs
+      - ./data/server/logs/nginx:/var/log/nginx/
+      - ./configs/nginx:/etc/nginx/conf.d
+      - ./data/server/static/:/usr/src/app/static
+      - ./data/server/uploads/:/usr/src/app/uploads
